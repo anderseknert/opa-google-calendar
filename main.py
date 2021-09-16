@@ -1,16 +1,14 @@
 import datetime
-import os.path
 import json
+import sys
 
 from googleapiclient.discovery import build
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
 from google.oauth2 import service_account
 
 SERVICE_ACCOUNT_FILE = "credentials.json"
 
 
-def main():
+def main(calendar_id):
     """Extract Google Calendar data for use by OPA"""
     credentials = service_account.Credentials.from_service_account_file(
         SERVICE_ACCOUNT_FILE
@@ -25,7 +23,7 @@ def main():
     events_result = (
         service.events()
         .list(
-            calendarId="anders@styra.com",
+            calendarId=calendar_id,
             timeMin=now,
             singleEvents=True,
             orderBy="startTime",
@@ -43,5 +41,7 @@ def main():
 
 
 if __name__ == "__main__":
-    # TODO: source calendar ID from args
-    main()
+    if len(sys.argv) != 2:
+        sys.exit("Usage: main.py <Calendar ID>")
+
+    main(sys.argv[1])
