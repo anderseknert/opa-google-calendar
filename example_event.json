@@ -1,0 +1,39 @@
+{
+    "kind": "calendar#event",
+    "etag": "\"3214758288554000\"",
+    "id": "6cunm7ho13guf52hooapqrl2f4_20211207T180000Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=yMDdUMTgwM",
+    "created": "2020-12-07T22:12:24.000Z",
+    "updated": "2020-12-07T22:12:24.277Z",
+    "summary": "Open Policy Agent (bi-weekly)",
+    "description": "Bi-weekly meeting on Tuesday to discuss OPA development, integrations, community events, etc.",
+    "location": "https://zoom.us/j/97827947600",
+    "creator": {
+        "email": "anders@styra.com",
+        "self": true
+    },
+    "organizer": {
+        "email": "anders@styra.com",
+        "self": true
+    },
+    "start": {
+        "dateTime": "2021-12-07T19:00:00+01:00",
+        "timeZone": "America/Los_Angeles"
+    },
+    "end": {
+        "dateTime": "2021-12-07T19:30:00+01:00",
+        "timeZone": "America/Los_Angeles"
+    },
+    "recurringEventId": "6cunm7ho13guf52hooapqrl2f4",
+    "originalStartTime": {
+        "dateTime": "2021-12-07T19:00:00+01:00",
+        "timeZone": "America/Los_Angeles"
+    },
+    "iCalUID": "6cunm7ho13guf52hooapqrl2f4@google.com",
+    "sequence": 0,
+    "reminders": {
+        "useDefault": true
+    },
+    "eventType": "default"
+}

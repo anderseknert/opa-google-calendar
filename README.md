@@ -12,4 +12,6 @@ Example integration of OPA using Google Calendar as a datasource
 
 ## Resources
 
+* [Google Calendar v3 API reference](https://developers.google.com/calendar/api/v3/reference)
 * [Google Calendar v3 Python API docs](https://developers.google.com/resources/api-libraries/documentation/calendar/v3/python/latest/calendar_v3.events.html)
+* [Event object description](https://developers.google.com/calendar/api/v3/reference/events)
