@@ -2,15 +2,16 @@
 
 Example integration of OPA using Google Calendar as a datasource
 
-## Steps to get started
+## Extract events from Google Calendar
 
 * Create a GCP service account. You do not need to change any defaults.
 * In your service account settings, click "Keys" and "New key". Download the credentials file.
-* Store credentials file as `credentials.json` in the project directory.
+* Export the private key as an env variable: `export SIGNING_KEY=$(cat credentials.json | jq -r .private_key)`
 * In Google Calendar, click the calendar you want to use and choose "Settings and sharing".
 * From the menu to the left, click "Share with specific people". Add the service account e-mail address.
 * From the menu to the left, click "Integrate calendar". Copy the Calendar ID value.
-* Run `main.py` with calendar ID as the first argument. Example: `python3 main.py anders@styra.com` 
+* Export the calendar ID: `export CALENDAR_ID=<calendar ID>`
+* Extract events and save to file: `opa eval --format raw --data events.rego data.google.calendar > calendar.json`
 
 ## Resources
 
