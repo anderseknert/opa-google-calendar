@@ -5,7 +5,7 @@ now := time.now_ns()
 now_s := round(now / 1000000000)
 
 auth_token := io.jwt.encode_sign({"alg": "RS256", "typ": "JWT"}, {
-	"iss": "opa-calendar@opa-lab.iam.gserviceaccount.com",
+	"iss": opa.runtime().env.SERVICE_ACCOUNT,
 	"scope": "https://www.googleapis.com/auth/calendar.events.readonly",
 	"aud": "https://oauth2.googleapis.com/token",
 	"exp": now_s + 3600,
