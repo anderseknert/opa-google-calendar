@@ -35,6 +35,12 @@ url := concat("", [
 
 headers := {"Authorization": concat(" ", ["Bearer", access_token])}
 
-response := http.send({"method": "GET", "url": url, "headers": headers}).body.items
+calendar := {"events": [e | o := http.send({"method": "GET", "url": url, "headers": headers}).body.items[_]
+							f := object.filter(o, ["summary", "start", "end"])
+							f != {}
+							e := with_timestamps(f)]}
 
-calendar := {"events": [e | o := response[_]; e := object.filter(o, ["summary", "start", "end"]); e != {}]}
+with_timestamps(o) = object.union(o, {
+	"start": {"timestamp": time.parse_rfc3339_ns(o.start.dateTime)},
+	"end": {"timestamp": time.parse_rfc3339_ns(o.end.dateTime)}
+})
