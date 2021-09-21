@@ -36,7 +36,7 @@ url := concat("", [
 headers := {"Authorization": concat(" ", ["Bearer", access_token])}
 
 calendar := {"events": [e | o := http.send({"method": "GET", "url": url, "headers": headers}).body.items[_]
-							f := object.filter(o, ["summary", "start", "end"])
+							f := object.filter(o, ["summary", "attendees", "start", "end"])
 							f != {}
 							e := with_timestamps(f)]}
 

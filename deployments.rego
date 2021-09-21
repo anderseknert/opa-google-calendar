@@ -1,4 +1,4 @@
-package deployment
+package deployments
 
 import data.events
 
