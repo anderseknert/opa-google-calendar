@@ -1,6 +1,6 @@
-# opa-google-calendar
+# OPA Google Calendar Integration
 
-Example integration of OPA using Google Calendar as a datasource
+Companion code for the [Styra blog](https://blog.styra.com/blog/the-power-of-data-calendar-based-policy-enforcement) on integrating OPA with the Google Calendar API as a datasource.
 
 ## Extract events from Google Calendar
 
